@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 2.8)
+project(sort)
+
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_LIST_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_LIST_DIR}/lib)
+
+AUX_SOURCE_DIRECTORY(./ SRC_LIST)
+ADD_EXECUTABLE(sort_test ${SRC_LIST})

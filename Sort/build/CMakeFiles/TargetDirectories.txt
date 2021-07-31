@@ -1,0 +1,3 @@
+/Users/luguangming/workspace/algorithm/Sort/build/CMakeFiles/rebuild_cache.dir
+/Users/luguangming/workspace/algorithm/Sort/build/CMakeFiles/edit_cache.dir
+/Users/luguangming/workspace/algorithm/Sort/build/CMakeFiles/sort_test.dir
