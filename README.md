@@ -1,3 +1,2 @@
 # algorithm
-algorithm learning from geekbang
-record some useful algorithm
+算法学习与练习
