@@ -18,6 +18,7 @@ void selection_sort(T arr[], int n)
             if(arr[j] < arr[min_index])
                 min_index = j;
         }
-        std::swap(arr[i], arr[min_index]);
+        if(min_index != i)
+            std::swap(arr[i], arr[min_index]);
     }
 }

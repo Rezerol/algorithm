@@ -44,9 +44,9 @@ int main()
     SortTestHelper::testSort("Quick Sort", quick_sort_way1, arr2, n);
     SortTestHelper::testSort("Quick Sort 2 Ways", quick_sort_way2, arr3, n);
     SortTestHelper::testSort("Quick Sort 3 Ways", quick_sort_way3, arr4, n);
-    SortTestHelper::testSort("Heap Sort 1", heap_sort, arr5, n);
-    //SortTestHelper::testSort("Heap Sort 2", heapSort2, arr6, n);
-    //SortTestHelper::testSort("Heap Sort 3", heapSort, arr7, n);
+    SortTestHelper::testSort("Heap Sort 1", heap_sort1, arr5, n);
+    SortTestHelper::testSort("Heap Sort 2", heap_sort2, arr6, n);
+    SortTestHelper::testSort("Heap Sort 3", heap_sort, arr7, n);
 
     delete[] arr1;
     delete[] arr2;

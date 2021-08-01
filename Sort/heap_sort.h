@@ -88,6 +88,17 @@ public:
         m_size = 0;
         m_capacity = capacity;
     }
+
+    MaxHeap(Item arr[], int n)
+    {
+        m_data = new Item[n+1];
+        for(int i = 0; i < n; i++)
+            m_data[i+1] = arr[i];
+        m_capacity = n;
+        m_size = n;
+        for(int i = m_size/2; i >=1; i--)
+            shift_down(i);
+    }
     ~MaxHeap()
     {
         delete [] m_data;
@@ -185,7 +196,7 @@ public:
 };
 
 template<typename T>
-void heap_sort(T arr[], int n)
+void heap_sort1(T arr[], int n)
 {
     MaxHeap<T> max_heap = MaxHeap<T>(n);
     for(int i = 0; i < n; i++)
@@ -193,4 +204,47 @@ void heap_sort(T arr[], int n)
     
     for(int i = n-1; i >= 0; i--)
         arr[i] = max_heap.pop_back();
+}
+
+template<typename T>
+void heap_sort2(T arr[], int n)
+{
+    MaxHeap<T> max_heap = MaxHeap<T>(arr, n);
+    
+    for(int i = n-1; i >= 0; i--)
+        arr[i] = max_heap.pop_back();
+}
+
+template<typename T>
+void shit_down(T arr[], int n, int index)
+{
+    T e = arr[index];
+    while(2*index + 1 < n)
+    {
+        int j = 2*index+1;
+        if(j+1 < n && arr[j+1] > arr[j])
+            j = j+1;
+            
+        if(arr[index] >= arr[j])
+            break;
+            
+        arr[index] = arr[j];
+        index = j;
+    }
+    arr[index] = e;
+}
+
+template<typename T>
+void heap_sort(T arr[], int n)
+{
+    for(int i = (n-1-1)/2; i >=0; i--)
+    {
+        shit_down(arr, n, i);
+    }
+
+    for(int i = n-1; i > 0; i--)
+    {
+        swap(arr[0], arr[i]);
+        shit_down(arr, i, 0);
+    }
 }
